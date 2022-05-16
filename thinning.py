@@ -3,8 +3,8 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 # Read the image as a grayscale image
-img = cv2.imread("F:/CODE/DB1_B/101_2.tif",0)
-img = cv2.resize(img , None , fx=1.5, fy=1.5)
+img = cv2.imread("F:/CODE/code_output_nhiueanh/sample_tu_tao/279686936_446114593945508_925034349377689202_n.jpg",0)
+img = cv2.resize(img , None , fx=0.5, fy=0.5)
 img_df = img
 # Threshold the image
 #img = cv2.adaptiveThreshold(img,255,cv2.ADAPTIVE_THRESH_MEAN_C,cv2.THRESH_BINARY_INV,11,2)
@@ -42,6 +42,7 @@ img2 =cv2.drawKeypoints(skel,kp,skel)
 imgth=cv2.bitwise_not(imgth)
 skel=cv2.bitwise_not(skel)
 cv2.imshow('anhgoc', img_df)
+cv2.imwrite('myfinger.jpg', img_df)
 cv2.imshow('otsu', imgth)
 cv2.imshow("skel",skel)
 print(ret)
